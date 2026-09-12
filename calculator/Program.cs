@@ -7,9 +7,25 @@
             string start;
             do {
                 Console.Write("Enter the first number: ");
-                double X = Convert.ToDouble(Console.ReadLine());
+                double X;
+                
+                    while (!double.TryParse(Console.ReadLine(), out X))
+                    {
+                        Console.Write("Invalid number enter the valid number : ");
+                    
+
+                    }
+                    
+                
+ 
+                
                 Console.Write("Enter the second number: ");
-                double Y = Convert.ToDouble(Console.ReadLine());
+                double Y ;
+                while (!double.TryParse(Console.ReadLine(), out Y))
+                {
+                    Console.Write("Invalid number enter the valid number : ");
+                }
+
                 Console.Write("Enter an operator (+, -, *, /): ");
                 string Operator = Console.ReadLine();
                 if (Operator == "+")
@@ -29,8 +45,20 @@
                 }
                 else if (Operator == "/")
                 {
-                    double Result = X / Y;
-                    Console.WriteLine(Result);
+                    if(Y!=0)
+                    {
+                        double Result = X / Y;
+                        Console.WriteLine(Result);
+                    }
+                    else
+                    {
+                        Console.WriteLine("canot devide on zero");
+                    }
+                    
+                }
+                else
+                {
+                    Console.WriteLine("Invalid operator.");
                 }
                 Console.Write("do caculate again read y/n : ");
                start= Console.ReadLine();
